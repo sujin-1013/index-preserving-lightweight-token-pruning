@@ -11,6 +11,10 @@ for spatial coherence. Patch indices are preserved, so the pruned sequence stays
 positionally consistent with the original document layout — substantially
 lowering computational cost at comparable accuracy.
 
+<p align="center">
+  <img src="experiments/index-preserving-token-pruning.png" width="700"/>
+</p>
+
 ## Highlights
 
 - **Patch-level binary classifier** — a small classifier decides text vs.
