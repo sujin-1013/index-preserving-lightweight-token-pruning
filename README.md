@@ -52,14 +52,17 @@ python3 patch_classifier/run_train.py   # see patch_classifier/ for data loading
 ## Repository structure
 
 ```
-qwen2_5_7b/
-  config.json                  architectures/auto_map template for Qwen2.5-VL-7B
-  modeling_qwen2_5_vl.py       modeling file with index-preserving token pruning
-merge_classifier_weights.py    merges classifier weights into the checkpoint
-patch_classifier/              patch-level text/background classifier training
-experiments/
-  modeling_ToMe_qwen2_5_vl.py      ToMe baseline for comparison
-  modeling_Dockylin_qwen2_5_vl.py  DocKylin baseline for comparison
+index-preserving-lightweight-token-pruning/
+├── qwen2_5_7b/
+│   ├── config.json                      # architectures/auto_map template for Qwen2.5-VL-7B
+│   └── modeling_qwen2_5_vl.py           # modeling file with index-preserving token pruning
+├── merge_classifier_weights.py          # merges classifier weights into the checkpoint
+├── patch_classifier/                    # patch-level text/background classifier
+│   ├── run_train.py                     #   training entry point
+│   └── lib/                             #   architecture, data loading, train/eval loops
+└── experiments/                         # baselines for comparison
+    ├── modeling_ToMe_qwen2_5_vl.py      #   ToMe
+    └── modeling_Dockylin_qwen2_5_vl.py  #   DocKylin
 ```
 
 ## Citation
