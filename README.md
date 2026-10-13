@@ -26,6 +26,22 @@ lowering computational cost at comparable accuracy.
 - **Drop-in for Qwen2.5-VL** — applied by replacing the modeling file and
   merging the classifier weights into the checkpoint; no retraining of the VLM.
 
+## Results
+
+Comparison with existing token reduction methods on Qwen2.5-VL-3B-Instruct (CC-OCR). Document parsing is measured in ANLS; key information extraction in F1, with normalized TED accuracy in parentheses.
+
+| Method | Doc. Parsing: Scan | Doc. Parsing: Photo | KIE: CORD | KIE: SROIE |
+|---|:---:|:---:|:---:|:---:|
+| Original (no pruning) | 62.4 | 73.7 | 87.2 (94.7) | 88.7 (97.5) |
+| ToMe | 8.8 | 11.1 | 6.0 (13.5) | 0.0 (9.9) |
+| DocKylin | 34.3 | 47.7 | 73.1 (84.1) | 69.6 (83.5) |
+| **Ours** | **61.8** | **71.0** | **83.0 (90.3)** | **87.9 (97.8)** |
+
+- **Efficiency**: 40–60% fewer end-to-end FLOPs on Qwen2.5-VL 3B and 7B, with 41.6% fewer visual tokens on average.
+- **Accuracy**: Stays close to the unpruned model, while existing methods lose most of their accuracy on text-heavy documents.
+
+See the [paper](https://arxiv.org/abs/2509.06415) for full results across model sizes and ablations.
+
 ## Usage
 
 **1. Build a Qwen2.5-VL model with pruning capability:**
