@@ -111,6 +111,6 @@ derived from the Hugging Face Qwen2.5-VL implementation, which is also
 Apache-2.0; the Qwen2.5-VL weights are distributed by Alibaba under their own
 terms and are not redistributed here. The ToMe baseline in `experiments/`
 embeds code from [facebookresearch/ToMe](https://github.com/facebookresearch/ToMe)
-(NOASSERTION), which keeps Meta's license and is excluded from the Apache grant.
+(CC BY-NC 4.0), which keeps Meta's license and is excluded from the Apache grant.
 
 Sujin Choi — Korea Electronics Technology Institute (KETI) · popo2419@keti.re.kr · [@sujin-1013](https://github.com/sujin-1013)
