@@ -6,6 +6,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2509.06415-b31b1b)](https://arxiv.org/abs/2509.06415)
 [![Venue](https://img.shields.io/badge/ICLR%202026%20Workshop-MM%20Intelligence-6f42c1)](https://arxiv.org/abs/2509.06415)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 A lightweight token pruning framework for document understanding in
 vision-language models. A binary patch-level classifier filters out
@@ -85,9 +86,10 @@ index-preserving-lightweight-token-pruning/
 ├── patch_classifier/                    # patch-level text/background classifier
 │   ├── run_train.py                     #   training entry point
 │   └── lib/                             #   architecture, data loading, train/eval loops
-└── experiments/                         # baselines for comparison
-    ├── modeling_ToMe_qwen2_5_vl.py      #   ToMe
-    └── modeling_Dockylin_qwen2_5_vl.py  #   DocKylin
+├── experiments/                         # baselines for comparison
+│   ├── modeling_ToMe_qwen2_5_vl.py      #   ToMe
+│   └── modeling_Dockylin_qwen2_5_vl.py  #   DocKylin
+└── LICENSE
 ```
 
 ## Citation
@@ -104,7 +106,11 @@ index-preserving-lightweight-token-pruning/
 
 ## License & contact
 
-The modeling files are derived from the HuggingFace Qwen2.5-VL implementation
-(Apache-2.0); see the headers of the respective files.
+Released under the [Apache License 2.0](LICENSE). The modeling files are
+derived from the Hugging Face Qwen2.5-VL implementation, which is also
+Apache-2.0; the Qwen2.5-VL weights are distributed by Alibaba under their own
+terms and are not redistributed here. The ToMe baseline in `experiments/`
+embeds code from [facebookresearch/ToMe](https://github.com/facebookresearch/ToMe)
+(NOASSERTION), which keeps Meta's license and is excluded from the Apache grant.
 
 Sujin Choi — Korea Electronics Technology Institute (KETI) · popo2419@keti.re.kr · [@sujin-1013](https://github.com/sujin-1013)
