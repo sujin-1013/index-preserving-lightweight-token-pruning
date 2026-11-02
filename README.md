@@ -1,4 +1,8 @@
-# Index-Preserving Lightweight Token Pruning for Efficient Document Understanding in Vision-Language Models
+# Index-Preserving Token Pruning
+
+> **Index-Preserving Lightweight Token Pruning for Efficient Document Understanding in Vision-Language Models**\
+> Jaemin Son, Sujin Choi, Inyong Yun\
+> Hana Institute of Technology (Hana TI) · ICLR 2026 Workshop on Multi-modal Intelligence
 
 [![arXiv](https://img.shields.io/badge/arXiv-2509.06415-b31b1b)](https://arxiv.org/abs/2509.06415)
 [![Venue](https://img.shields.io/badge/ICLR%202026%20Workshop-MM%20Intelligence-6f42c1)](https://arxiv.org/abs/2509.06415)
@@ -8,8 +12,9 @@ vision-language models. A binary patch-level classifier filters out
 non-informative background regions from document images **before** VLM
 processing, and a max-pooling refinement step restores fragmented text regions
 for spatial coherence. Patch indices are preserved, so the pruned sequence stays
-positionally consistent with the original document layout — substantially
-lowering computational cost at comparable accuracy.
+positionally consistent with the original document layout. On CC-OCR with
+Qwen2.5-VL-3B it keeps **61.8** ANLS on scanned document parsing against 62.4
+without pruning, with **41.6%** fewer visual tokens on average.
 
 <p align="center">
   <img src="experiments/index-preserving-token-pruning.png" width="700"/>
@@ -101,4 +106,5 @@ index-preserving-lightweight-token-pruning/
 
 The modeling files are derived from the HuggingFace Qwen2.5-VL implementation
 (Apache-2.0); see the headers of the respective files.
-Sujin Choi — popo2419@keti.re.kr
+
+Sujin Choi — Korea Electronics Technology Institute (KETI) · popo2419@keti.re.kr · [@sujin-1013](https://github.com/sujin-1013)
